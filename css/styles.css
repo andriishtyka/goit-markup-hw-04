@@ -1,0 +1,402 @@
+/* #region = GLOBAL SETTINGS */
+
+:root {
+  /* colors */
+  --navy-blue: #2e2f42;
+  --slate: #434455;
+  --white: #ffffff;
+  --iris: #4d5ae5;
+  --cloud: #f4f4fd;
+  --ocean: #404bbf;
+  --cornflower: #e7e9fc;
+
+  /* fonts */
+  ---first-family: "Roboto";
+  ---second-family: "Raleway";
+}
+
+body {
+  font-family: var(---first-family), sans-serif;
+  color: var(--navy-blue);
+  background-color: var(--white);
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+address {
+  font-style: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+.container {
+  box-sizing: border-box;
+  max-width: 1160px;
+
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* #endregion = MASTER SETTINGS */
+
+/* #region = Header */
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--cornflower);
+  height: 72px;
+}
+
+.page-nav {
+  display: flex;
+  align-items: center;
+  column-gap: 76px;
+}
+
+.link-nav {
+  font-family: var(---second-family);
+
+  text-transform: uppercase;
+  color: var(--iris);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 117%;
+  letter-spacing: 0.03em;
+
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.link-nav:hover,
+.link-nav:focus {
+  opacity: 0.8;
+}
+
+.link-nav .header-logo-word {
+  color: var(--navy-blue);
+}
+
+.menu-links {
+  display: flex;
+  gap: 40px;
+  height: 100%;
+  align-items: stretch;
+}
+
+.menu-links li {
+  display: flex;
+  align-items: stretch;
+}
+
+.link-menu {
+  display: flex;
+  text-transform: capitalize;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.02em;
+  color: var(--navy-blue);
+
+  box-sizing: border-box;
+  height: 100%;
+  align-items: center;
+
+  position: relative;
+}
+
+.link-menu:hover,
+.link-menu:focus {
+  color: var(--iris);
+}
+
+.link-menu.active-page {
+  color: var(--iris);
+}
+
+.link-menu.active-page::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: var(--iris);
+  border-radius: 4px;
+}
+
+.address-items {
+  display: flex;
+  gap: 40px;
+  align-items: stretch;
+}
+
+.address-items a {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.02em;
+  color: var(--slate);
+  padding-top: auto;
+  padding-bottom: auto;
+  
+  display: flex;
+  align-items: center;
+}
+
+.address-items a:hover,
+.address-items a:focus {
+  color: var(--iris);
+}
+
+/* #endregion = Header */
+
+/* #region = Hero */
+
+.hero-container {
+  background-color: var(--navy-blue);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 48px;
+  padding: 188px 0;
+}
+
+.title-primary {
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 107%;
+  letter-spacing: 0.02em;
+  color: var(--white);
+  text-align: center;
+}
+
+.button-primary {
+  cursor: pointer;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+  background-color: var(--iris);
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.04em;
+  color: var(--white);
+
+  border-radius: 4px;
+  padding: 16px 32px;
+  border-width: 0;
+}
+
+.button-primary:hover,
+.button-primary:focus {
+  background-color: var(--ocean);
+}
+
+/* #endregion = Hero */
+
+/* #region = Benefits */
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.title-tertiary {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 120%;
+  letter-spacing: 0.02em;
+  color: var(--navy-blue);
+  margin-bottom: 8px;
+}
+
+.paragraph-text {
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.02em;
+  color: var(--slate);
+}
+
+.benefits-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding: 120px 0;
+}
+
+.benefit-item {
+  flex: 1 1;
+  width: calc((100% - 72px) / 4);
+  min-width: 264px;
+}
+
+/* #endregion = Benefits */
+
+/* #region = Our Team */
+
+.our-team-container {
+  background-color: var(--cloud);
+  padding: 120px 0;
+}
+
+.title-secondary {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 111%;
+  letter-spacing: 0.02em;
+
+  text-align: center;
+  margin-bottom: 72px;
+}
+
+.team-cards-all {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.team-card {
+  flex: 1 1;
+  width: calc((100% - 72px) / 4);
+  min-width: 264px;
+}
+
+.team-card a:hover,
+.team-card a:focus {
+  opacity: 0.8;
+}
+
+.card-link {
+  background-color: var(--white);
+  padding-bottom: 32px;
+
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
+}
+
+.our-team-container .title-tertiary {
+  text-align: center;
+  padding: 0 16px;
+}
+
+.our-team-container .paragraph-text {
+  text-align: center;
+  padding: 0 16px;
+}
+
+.team-image-in-card {
+  height: 260px;
+  width: 100%;
+
+  margin-bottom: 32px;
+}
+
+.team-image-in-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* #endregion = Our Team */
+
+/* #region = Portfolio */
+
+.portfolio {
+  padding: 120px 0;
+}
+
+.portfolio-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+}
+
+.list-card {
+  flex: 1 1;
+  width: calc((100% - 48px) / 3);
+  min-width: 360px;
+}
+
+.portfolio-list a:hover,
+.portfolio-list a:focus {
+  opacity: 0.8;
+}
+
+.portfolio-list .title-tertiary {
+  padding: 0 16px;
+}
+
+.portfolio-list .paragraph-text {
+  padding: 0 16px;
+}
+
+.portfolio-image-in-card {
+  height: 300px;
+  width: 100%;
+
+  margin-bottom: 32px;
+}
+
+.portfolio-image-in-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* #endregion = Portfolio */
+
+/* #region = Footer */
+
+.page-footer {
+  background-color: var(--navy-blue);
+  padding: 100px 0;
+}
+
+.page-footer .footer-logo-word {
+  color: var(--cloud);
+}
+
+.page-footer .paragraph-text {
+  color: var(--cloud);
+}
+
+.page-footer .link-nav {
+  margin-bottom: 16px;
+}
+
+/* #endregion = Footer */
