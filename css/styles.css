@@ -68,7 +68,6 @@ p {
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid var(--cornflower);
-  height: 72px;
 }
 
 .page-nav {
@@ -115,6 +114,7 @@ p {
   display: flex;
   height: 100%;
   box-sizing: border-box;
+  padding: 24px 0;
 
   align-items: center;
   position: relative;
