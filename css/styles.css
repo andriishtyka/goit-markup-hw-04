@@ -9,6 +9,7 @@
   --cloud: #f4f4fd;
   --ocean: #404bbf;
   --cornflower: #e7e9fc;
+  --grey: rgba(46, 47, 66, 0.5);
 
   /* fonts */
   ---first-family: "Roboto";
@@ -76,6 +77,8 @@ p {
   column-gap: 76px;
 }
 
+/* ---------- logo ---------- */
+
 .link-nav {
   font-family: var(---second-family);
 
@@ -99,6 +102,8 @@ p {
 .link-nav .header-logo-word {
   color: var(--navy-blue);
 }
+
+/* ---------- menu links ---------- */
 
 .menu-links {
   display: flex;
@@ -162,6 +167,8 @@ p {
   border-radius: 4px;
 }
 
+/* ---------- address ---------- */
+
 .address-items {
   display: flex;
   gap: 40px;
@@ -191,6 +198,9 @@ p {
 
 .hero-container {
   background-color: var(--navy-blue);
+  background-image: linear-gradient(var(--grey), var(--grey)), url(../images/hero-image.jpg);
+  background-position: center;
+  background-size: cover;
 
   display: flex;
   flex-direction: column;
@@ -209,6 +219,8 @@ p {
   text-align: center;
 }
 
+/* button */
+
 .button-primary {
   cursor: pointer;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
@@ -223,11 +235,28 @@ p {
   border-radius: 4px;
   padding: 16px 32px;
   border-width: 0;
+
+  position: relative;
+  z-index: 0;
 }
 
-.button-primary:hover,
-.button-primary:focus {
+.button-primary::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0px;
+  height: 100%;
   background-color: var(--ocean);
+  border-radius: 4px;
+
+  z-index: -1;
+  transition: width 400ms ease;
+}
+
+.button-primary:hover::after,
+.button-primary:focus::after {
+  width: 100%;
 }
 
 /* #endregion = Hero */
