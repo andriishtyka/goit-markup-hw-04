@@ -91,15 +91,17 @@ p {
   height: 100%;
   display: flex;
   align-items: center;
+
+  transition: opacity 200ms ease-in-out;
+}
+
+.header-logo-word {
+  color: var(--navy-blue);
 }
 
 .link-nav:hover,
 .link-nav:focus {
   opacity: 0.8;
-}
-
-.link-nav .header-logo-word {
-  color: var(--navy-blue);
 }
 
 /* ---------- menu links ---------- */
@@ -125,6 +127,8 @@ p {
   line-height: 150%;
   letter-spacing: 0.02em;
   color: var(--navy-blue);
+
+  transition: 200ms ease-in-out;
 }
 
 .not-active-page::after {
@@ -185,6 +189,8 @@ p {
 
   display: flex;
   align-items: center;
+
+  transition: 200ms ease-in-out;
 }
 
 .address-items a:hover,
@@ -197,17 +203,48 @@ p {
 /* #region = Hero */
 
 .hero-container {
-  background-color: var(--navy-blue);
-  background-image: linear-gradient(var(--grey), var(--grey)), url(../images/hero-image.jpg);
-  background-position: center;
-  background-size: cover;
-
+  position: relative;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   row-gap: 48px;
   padding: 188px 0;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--navy-blue);
+  background-image: linear-gradient(var(--grey), var(--grey)), url(../images/hero-image.jpg);
+  background-position: center;
+  background-size: cover;
+  z-index: -1;
+
+  transition: transform 1000ms ease-in-out;
+}
+
+.hero-container:hover .hero-background {
+  transform: scale(1.1);
+}
+
+.hero-background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: opacity 1000ms ease-in-out;
+}
+
+.hero-container:hover .hero-background-overlay {
+  opacity: 1;
 }
 
 .title-primary {
@@ -238,6 +275,29 @@ p {
 
   position: relative;
   z-index: 0;
+
+  /* animation: pulse 2000ms infinite ease-in-out;
+  transition: transform 300ms ease; */
+
+  transition: transform 1000ms ease-in-out;
+}
+
+/* @keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.button-primary:hover {
+  animation-play-state: paused;
+} */
+
+.hero-container:hover .button-primary {
+  transform: scale(1.1);
 }
 
 .button-primary::after {
